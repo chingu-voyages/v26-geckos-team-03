@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 function Login(props) {
   return (
-    <Modal {...props} className="modal" centered aria-labelledby="contained-modal-title-vcenter">
+    <Modal {...props} className="modal" centered aria-labelledby="login-modal">
       <Modal.Body className="show-grid">
         <Container className="text-center">
           <Row>

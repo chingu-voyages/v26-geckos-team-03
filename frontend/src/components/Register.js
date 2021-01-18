@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 function Register(props) {
   return (
-    <Modal {...props} centered aria-labelledby="contained-modal-title-vcenter">
+    <Modal {...props} centered aria-labelledby="register-modal">
       <Modal.Body className="show-grid">
         <Container className="text-center">
           <Row>
@@ -17,20 +17,13 @@ function Register(props) {
             </Col>
             <Col xs={{ span: 10, offset: 1 }} className="text-center">
               <Form>
-                <Form.Group controlId="formBasicName">
-                  <Form.Row>
-                    <Col>
-                      <Form.Control className="bg-danger formField" placeholder="First name" />
-                    </Col>
-                    <Col>
-                      <Form.Control className="bg-danger formField" placeholder="Last name" />
-                    </Col>
-                  </Form.Row>
+                <Form.Group controlId="formName">
+                  <Form.Control className="bg-danger formField" placeholder="Username" />      
                 </Form.Group>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group controlId="formEmail">
                   <Form.Control className="bg-danger formField" type="email" placeholder="Email address" />
                 </Form.Group>
-                <Form.Group controlId="formBasicPassword">
+                <Form.Group controlId="formPassword">
                   <Form.Control className="bg-danger formField" type="password" placeholder="Password" />
                 </Form.Group>
               </Form>

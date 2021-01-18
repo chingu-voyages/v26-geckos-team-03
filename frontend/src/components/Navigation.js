@@ -7,13 +7,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import logo from '../assets/1.png';
-import { useSelector, useDispatch } from 'react-redux';
-import {increment, decrement} from '../actions';
+// import { useSelector, useDispatch } from 'react-redux';
+// import {increment, decrement} from '../actions';
 
 function Navigation() {
-  const counter = useSelector(state => state.counter);
-  const isLogged = useSelector(state => state.isLogged);
-  const dispatch = useDispatch();
+  // const counter = useSelector(state => state.counter);
+  // const isLogged = useSelector(state => state.isLogged);
+  // const dispatch = useDispatch();
 
   const [modalLoginShow, setModalLoginShow] = useState(false);
   const [modalRegShow, setModalRegShow] = useState(false);
