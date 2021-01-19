@@ -1,14 +1,14 @@
 import mongoose from "mongoose"
 
 const cardSchema =mongoose.Schema({
+     cardNo:Number,
      category: String,
      cardName: String,
      description: String,
      icon:String,
-     createdAt:{
-         type:Date,
-         default: new Date()
-     }
+},
+{
+    timestamps:true
 })
 
 
