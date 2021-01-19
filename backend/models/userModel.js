@@ -1,23 +1,17 @@
 import mongoose from "mongoose"
 
-const userSchema =mongoose.Schema({
-    firstName:{
+const userSchema = mongoose.Schema({
+    username:{
         type:String,
         require:true,
         trim:true,
         minlength:2
     },
-    lastName:{
+    email:{
         type:String,
         require:true,
-        trim:true,
-        minlength:2
-    },
-    emailAddress:{
-        type:String,
-        lowercase: true,
-        require:true,
-        unique:true
+        unique:true,
+        lowercase: true
     },
     password:{
         type:String,
