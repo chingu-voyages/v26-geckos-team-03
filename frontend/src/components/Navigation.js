@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Login from'./Login';
 import Register from'./Register';
 import Hero from'./Hero';
-import Footer from'./Footer';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import logo from '../assets/1.png';
-// import { useSelector, useDispatch } from 'react-redux';
-// import {increment, decrement} from '../actions';
+import { signin, getCards } from '../actions';
+import { useSelector, useDispatch } from 'react-redux';
+import Displaycards from './Displaycards';
+import Editcard from './Editcard';
+
+
 
 function Navigation() {
-  // const counter = useSelector(state => state.counter);
-  // const isLogged = useSelector(state => state.isLogged);
-  // const dispatch = useDispatch();
+  const isLogged = useSelector(state => state.isLogged);
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(getCards());
+  }, [dispatch]);
 
   const [modalLoginShow, setModalLoginShow] = useState(false);
   const [modalRegShow, setModalRegShow] = useState(false);
+  const [modalCardShow, setModalCardShow] = useState(false);
+
 
   return (
   <>
@@ -34,19 +42,23 @@ function Navigation() {
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="ml-auto">
-        <Button className="text-secondary" variant="danger" onClick={() => setModalLoginShow(true)}>Log In</Button>{' '}
-        <Button className="text-secondary" variant="warning" onClick={() => setModalRegShow(true)}>Register</Button>{' '}
+        {isLogged ?
+        <>
+        <Button className="text-secondary" variant="danger" onClick={() => setModalCardShow(true)}>Add Card</Button>
+        <Button className="text-secondary" variant="warning" onClick={() => {dispatch(signin())}}>Log Out</Button>
+        </>
+         : 
+        <>
+        <Button className="text-secondary" variant="danger" onClick={() => setModalLoginShow(true)}>Log In</Button>
+        <Button className="text-secondary" variant="warning" onClick={() => setModalRegShow(true)}>Register</Button>
+        </>}
       </Nav>
     </Navbar.Collapse>
   </Navbar>
     <Login show={modalLoginShow} onHide={() => setModalLoginShow(false)} />
     <Register show={modalRegShow} onHide={() => setModalRegShow(false)} />
-    <Hero />
-    <Footer />
-  {/* <h1>Counter {counter}</h1>
-  <button onClick={() => dispatch(increment(5))}>+</button>
-  <button onClick={() => dispatch(decrement())}>-</button>
-  {isLogged ? <h3>Some Valuable Info</h3> : ''} */}
+    <Editcard show={modalCardShow} onHide={() => setModalCardShow(false)} />
+    {isLogged ? <Displaycards /> : <Hero />}
   </>
   );
 }

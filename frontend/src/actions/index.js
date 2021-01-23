@@ -1,12 +1,7 @@
-export const increment = nr => {
-  return {
-    type: 'INCREMENT',
-    payload: nr
-  };
-};
+export * from './cards';
 
-export const decrement = () => {
+export const signin = () => {
   return {
-    type: 'DECREMENT'
+    type: 'SIGN_IN'
   };
 };
