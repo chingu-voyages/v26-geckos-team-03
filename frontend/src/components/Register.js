@@ -15,7 +15,7 @@ function Register(props) {
             <Col xs={12} className="text-center">
               <h3 className="text-secondary">Start creating your cards today!</h3>
             </Col>
-            <Col xs={{ span: 10, offset: 1 }} className="text-center">
+            <Col sm={{ span: 10, offset: 1 }} className="text-center">
               <Form>
                 <Form.Group controlId="formName">
                   <Form.Control className="bg-danger formField" placeholder="Username" />      

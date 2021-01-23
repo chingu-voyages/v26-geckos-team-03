@@ -1,10 +1,10 @@
-import counterReducer from './counter';
 import loggedReducer from './isLogged';
+import cardsReducer from'./cards';
 import {combineReducers} from 'redux';
 
 const allReducer = combineReducers({
-  counter: counterReducer,
-  isLogged: loggedReducer
+  isLogged: loggedReducer,
+  cards: cardsReducer
 });
 
 export default allReducer;

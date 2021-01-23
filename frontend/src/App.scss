@@ -45,6 +45,12 @@ button {
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
     }
   }
+
+  .iconBtn {
+    width:200px;
+    height: 60px;
+    font-size: 24px;
+  }
 }
 
 .brandText {
@@ -172,5 +178,63 @@ button {
   margin: 10px 32px;
   }
 }
-
   
+.cardsdisplay {
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background-color: #FDCA5C;
+  padding: 75px 64px 20px;
+}
+
+@media (min-width: 1366px) {
+  .cardsdisplay {
+  padding: 75px 18vw 20px;
+  }
+}
+
+@media (max-width: $bootstrap-sm) {
+  .cardsdisplay {
+  padding: 75px 30px 20px;
+  }
+}
+
+.libcard {
+  width: auto;
+  height:auto;
+  margin:15px 0px;
+  border: 0px;
+  border-radius: 20px;
+
+  .cardpic {
+    background: #F77B55;
+    padding-bottom:30px;
+    border-radius: 20px 20px 0px 0px;
+
+    .cardbtns{
+      background: none;
+      border: none;
+      padding: 15px 20px 0px 20px;
+
+      svg:hover {
+        cursor:pointer;
+        opacity:60%;
+      }
+    }
+  }
+
+  .cardbody {
+    background: #62C97D;
+    color: #25747D;
+    border-radius: 0px 0px 20px 20px;
+
+    .card-title {
+      font-size: 25px;
+    }
+  }
+
+  img {
+    height: auto;
+    width:150px;
+
+  }
+}
