@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use('/cards', cardRoutes);
 
-const CONNECTION_URL = 'mongodb+srv://birdyart:birdyart123@cluster0.8e8un.mongodb.net/<dbname>?retryWrites=true&w=majority';
+const CONNECTION_URL = process.env.ATLAS_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
