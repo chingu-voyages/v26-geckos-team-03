@@ -1,16 +1,17 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
-const cardSchema =mongoose.Schema({
-     cardNo:Number,
-     category: String,
-     cardName: String,
-     description: String,
-     icon:String,
-},
-{
-    timestamps:true
-})
+const cardSchema = mongoose.Schema({
+  title: String,
+  description: String,
+  category: String,
+  icon: String,
+  createdAt: {
+    type:Date,
+    default: new Date()
+  }
+});
 
 
-const cardModel =mongoose.model("cardModel", cardSchema)
-export default cardModel
+const cardModel = mongoose.model('cardModel', cardSchema);
+
+export default cardModel;
