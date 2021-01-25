@@ -12,5 +12,5 @@ const cardSchema =mongoose.Schema({
 })
 
 
-const cardModel =mongoose.model("cardModel", cardSchema)
+const cardModel =mongoose.model("cards", cardSchema)
 export default cardModel
