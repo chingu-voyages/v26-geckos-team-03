@@ -3,7 +3,7 @@ const cardsReducer = (cards =[], action) => {
     case 'FETCH_ALL':
       return action.payload;
     case 'CREATE':
-      return cards;
+      return [...cards, action.payload];
     default:
       return cards;
   }
