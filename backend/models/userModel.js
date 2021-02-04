@@ -1,4 +1,7 @@
 import mongoose from "mongoose"
+import bcrypt from "bcryptjs"
+import jwt from "jsonwebtoken"
+import slug from "mongoose-slug-generator"
 
 const userSchema = mongoose.Schema({
     userName:{
