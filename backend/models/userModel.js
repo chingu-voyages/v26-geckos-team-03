@@ -1,9 +1,5 @@
 import mongoose from "mongoose"
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
-import slug from "mongoose-slug-generator"
-import cors from 'cors'
-dotenv.config()
+
 
 const userSchema = mongoose.Schema({
     userName:{
@@ -11,7 +7,7 @@ const userSchema = mongoose.Schema({
         require:[true,"can't be blank"],
         trim:true,
         minlength:2,
-        maxlength:125,
+        maxlength:20,
         index:true,
     },
     slug:{type: String, slug:"userName"},
@@ -32,32 +28,6 @@ const userSchema = mongoose.Schema({
 }
 )
 
-userSchema.statics.generateHashPassword=(password)=>{
-    if(password){
-        const salt=bcrypt.genSaltSync(10)
-        const hash=bcrypt.hashSync(password, salt)
-        return hash
-    }
-}
-
-userSchema.methods.validatePassword=(password, hashedPassword)=>{
-    let res=bcrypt.compareSync(password, hashedPassword)
-    return res
-}
-
-userSchema.methods.generateJWT=function(){
-    let today=new Date()
-    let exp=new Date(doday)
-    exp.setDate(today.getDate()+1)
-    return jwt.sign(
-        {
-        id:this._id,
-        name:this.name
-    },
-     process.env.JWT_SECRET,
-     {expiresIn:'10h'}
-    )
-}
 
 
 const userModel =mongoose.model("users", userSchema)
