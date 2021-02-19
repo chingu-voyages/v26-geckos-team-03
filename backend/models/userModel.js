@@ -1,22 +1,21 @@
 import mongoose from "mongoose"
 
+
 const userSchema = mongoose.Schema({
-    firstName:{
+    userName:{
         type:String,
-        require:true,
+        require:[true,"can't be blank"],
         trim:true,
-        minlength:2
+        minlength:2,
+        maxlength:20,
+        index:true,
     },
-    lastName:{
-        type:String,
-        require:true,
-        trim:true,
-        minlength:2
-    },
+    slug:{type: String, slug:"userName"},
     email:{
         type:String,
         require:true,
-        unique:true,
+        unique:[true,"can't be blank"],
+        match:[/\S+@\S+\.\S+/, 'is invalid'],
         lowercase: true
     },
     password:{
@@ -28,6 +27,7 @@ const userSchema = mongoose.Schema({
     timestamps:true
 }
 )
+
 
 
 const userModel =mongoose.model("users", userSchema)
