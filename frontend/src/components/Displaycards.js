@@ -19,39 +19,6 @@ function Displaycards() {
         <Col xs={12} sm={6} lg={4} xl={3}>
           <Singlecard />
         </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
-        <Col xs={12} sm={6} lg={4} xl={3}>
-          <Singlecard />
-        </Col>
       </Row>
     </Jumbotron>
   );
