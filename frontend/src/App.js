@@ -9,7 +9,7 @@ library.add(faTimes, faEdit, faPlusCircle);
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Navigation />
       <Footer />
     </div>

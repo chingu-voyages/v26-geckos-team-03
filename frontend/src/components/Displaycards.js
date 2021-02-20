@@ -52,6 +52,7 @@ function Displaycards() {
 			</Row>
 		</Jumbotron>
 	);
+
 }
 
 export default Displaycards;

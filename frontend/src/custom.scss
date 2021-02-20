@@ -1,10 +1,10 @@
 $theme-colors: (
-    "warning": #F77B55,
-    "primary": #62C97D,
-    "secondary": #25747D,
-    "danger": #FDCA5C
+  "warning": #f77b55,
+  "primary": #62c97d,
+  "secondary": #25747d,
+  "danger": #fdca5c,
 );
 
-$input-placeholder-color:rgba(38, 117, 125, 0.6);
+$input-placeholder-color: rgba(38, 117, 125, 0.6);
 
 @import "~bootstrap/scss/bootstrap";
